@@ -1,6 +1,7 @@
 import pygame
 import sys
 
+
 def joonista_ruudustik(read, veerud, ruudu_suurus, joone_varv):
     # Fikseeritud akna suurus
     WIDTH, HEIGHT = 640, 480
@@ -44,12 +45,12 @@ def seadete_aken():
     # Seadete akna suurus
     screen = pygame.display.set_mode((450, 350))
     pygame.display.set_caption("Ruudustiku seadistamine")
-    
+
     # MUUDATUS: Font on nüüd Comic Sans
     try:
         font = pygame.font.SysFont("Comic Sans MS", 18)
     except:
-        font = pygame.font.SysFont("Arial", 18) # Varufont, kui süsteemis Comic Sansi pole
+        font = pygame.font.SysFont("Arial", 18)  # Varufont, kui süsteemis Comic Sansi pole
 
     # Sinu soovitud roheline värv
     roheline = (0, 102, 51)
@@ -66,7 +67,7 @@ def seadete_aken():
 
     running = True
     while running:
-        screen.fill((40, 44, 52)) # Tume taust, et tekst välja paistaks
+        screen.fill((40, 44, 52))  # Tume taust, et tekst välja paistaks
 
         # Juhis (Nüüd roheline)
         info = font.render("TAB: liigu | BACKSPACE: kustuta | ENTER: käivita", True, roheline)
@@ -82,7 +83,7 @@ def seadete_aken():
 
             # Sisestuskasti taust ja tekst
             pygame.draw.rect(screen, (33, 37, 43), (220, 75 + i * 50, 180, 35))
-            val_txt = font.render(inputs[key], True, (224, 108, 117)) # Sisestatud tekst on punakas
+            val_txt = font.render(inputs[key], True, (224, 108, 117))  # Sisestatud tekst on punakas
             screen.blit(val_txt, (230, 80 + i * 50))
 
         for event in pygame.event.get():
@@ -115,6 +116,7 @@ def seadete_aken():
                         inputs[keys[active_idx]] += event.unicode
 
         pygame.display.flip()
+
 
 if __name__ == "__main__":
     seadete_aken()
