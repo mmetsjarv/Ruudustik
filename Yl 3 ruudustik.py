@@ -44,7 +44,7 @@ def seadete_aken():
     pygame.init()
     # Seadete akna suurus
     screen = pygame.display.set_mode((450, 350))
-    pygame.display.set_caption("Ruudustiku seadistamine")
+    pygame.display.set_caption("Ruudustiku seadistamine - Metsjärv")
 
     # MUUDATUS: Font on nüüd Comic Sans
     try:
